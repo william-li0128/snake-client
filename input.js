@@ -1,5 +1,5 @@
 const connect = require("./client");
-const {IP, PORT, NAME, MOVE_UP_KEY, MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY} = require("./constants");
+const {IP, PORT, NAME, MOVE_UP_KEY, MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY, SLOGAN, EXIT_KEY} = require("./constants");
 
 let connection;
 
@@ -14,8 +14,11 @@ const setupInput = (conn) => {
 
   //define the handleUserInput
   const handleUserInput = function(input) {
-    if (input.toString() == "z") {
-      process.exit();
+    if (input.toString() == EXIT_KEY) {
+      process.exit(); // problem here: can't set ctrl+c as the exit keyword.
+    }
+    if (input.toString() == "q") {
+      process.exit(); // problem here: can't set ctrl+c as the exit keyword.
     }
     if (input.toString() == MOVE_UP_KEY) {
       connection.write("Move: up");
@@ -32,10 +35,6 @@ const setupInput = (conn) => {
   };
   stdin.on("data", handleUserInput);
 
-  // process.on("SIGINT", () => {
-  //   console.log("Caught interrupt signal");
-  //   process.exit();
-  // })
   return stdin;
 };
 
