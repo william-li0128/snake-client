@@ -12,14 +12,12 @@ const connect = function () {
   conn.setEncoding("utf8");
 
   // tell clients they have successfully connected and send their name to game server
-  conn.on("connect", () => {
+  conn.on("connect", (data) => {
     console.log("Successfully connected to game server");
     conn.write("Name: Li");
-  });
-
-  // show message from the server
-  conn.on("data", (data) => {
-    console.log(data);
+    conn.on("data", (data) => {
+      console.log(data);
+    });  
   });
 
   return conn;
