@@ -17,4 +17,4 @@ Before you can run this client, you will need to be running the server side whic
 - Open the constants.js to declare your IP, PORT, NAME, preferred keywords, and slogan.
 - Run the development snake client using the `node play.js` command.
 - Use your preferred keywords to play the game and try to get the longgest snake.
-- USe your preferred **exit_key** to exit the game.
+- USe your preferred **exit_key** to exit the game. The original exit_key has been setted to "ctrl-c".

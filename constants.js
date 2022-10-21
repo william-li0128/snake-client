@@ -7,7 +7,7 @@ const MOVE_DOWN_KEY = "s";
 const MOVE_LEFT_KEY = "a";
 const MOVE_RIGHT_KEY = "d";
 const SLOGAN = "go long!";
-const EXIT_KEY = "z";
+const EXIT_KEY = "\u0003"; // https://stackoverflow.com/questions/5006821/nodejs-how-to-read-keystrokes-from-stdin
 
 module.exports = {
   IP,
