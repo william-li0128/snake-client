@@ -1,4 +1,5 @@
 const net = require("net");
+const { setTimeout } = require("timers/promises");
 
 // establishes a connection with the game server
 const connect = function () {
@@ -14,6 +15,15 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
     conn.write("Name: Li");
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 50)
+    // setTimeout(() => {
+    //   conn.write("Move: up");
+    // }, 50)
+    // setTimeout(() => {
+    //   conn.write("Move: up");
+    // }, 100)
   });
 
   // show message from the server
